@@ -1,0 +1,30 @@
+def chatbot(user_query):
+    if "weather" in user_query:
+        return "The weather is sunny today."
+    elif "hello" in user_query or "hi" in user_query:
+        return "Hello! How can I assist you?"
+    elif "time" in user_query:
+        # Implement code to get the current time
+        return "The current time is XX:XX."
+    elif "help" in user_query:
+        return "Sure! You can ask me about the weather, time, or anything else you need assistance with."
+    else:
+        return "I'm sorry, I didn't understand that."
+
+# Main loop for interacting with the chatbot
+def main():
+    print("Welcome to the Rule-Based Chatbot!")
+    print("Type 'exit' to end the conversation.")
+
+    while True:
+        user_query = input("You: ").lower()
+
+        if user_query == 'exit':
+            print("Goodbye!")
+            break
+
+        response = chatbot(user_query)
+        print("Bot:", response)
+
+if __name__ == "__main__":
+    main()
